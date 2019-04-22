@@ -10,6 +10,7 @@ open Microsoft.AspNetCore.HttpsPolicy;
 open Microsoft.AspNetCore.Mvc
 open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
+open Microsoft.AspNetCore.Http
 
 type Startup private () =
     new (configuration: IConfiguration) as this =
@@ -20,6 +21,7 @@ type Startup private () =
     member this.ConfigureServices(services: IServiceCollection) =
         // Add framework services.
         services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1) |> ignore
+        services.AddSignalR() |> ignore
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     member this.Configure(app: IApplicationBuilder, env: IHostingEnvironment) =
@@ -30,5 +32,6 @@ type Startup private () =
 
         app.UseHttpsRedirection() |> ignore
         app.UseMvc() |> ignore
+        app.UseSignalR(fun routes -> routes.MapHub<Hubs.ChatHub>(PathString "/chathub"))
 
     member val Configuration : IConfiguration = null with get, set
