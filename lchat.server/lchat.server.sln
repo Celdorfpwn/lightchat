@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "lchat.server", "lchat.server\lchat.server.fsproj", "{2386158E-71B3-41E3-A71C-2AED52ABF00E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2386158E-71B3-41E3-A71C-2AED52ABF00E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2386158E-71B3-41E3-A71C-2AED52ABF00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2386158E-71B3-41E3-A71C-2AED52ABF00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2386158E-71B3-41E3-A71C-2AED52ABF00E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C7A38565-179F-4376-8A23-5AA706887097}
+	EndGlobalSection
+EndGlobal

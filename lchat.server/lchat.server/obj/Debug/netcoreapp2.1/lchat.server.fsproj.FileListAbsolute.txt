@@ -1,0 +1,10 @@
+L:\Projects\LChat\lchat.server\lchat.server\bin\Debug\netcoreapp2.1\lchat.server.deps.json
+L:\Projects\LChat\lchat.server\lchat.server\bin\Debug\netcoreapp2.1\lchat.server.runtimeconfig.json
+L:\Projects\LChat\lchat.server\lchat.server\bin\Debug\netcoreapp2.1\lchat.server.runtimeconfig.dev.json
+L:\Projects\LChat\lchat.server\lchat.server\bin\Debug\netcoreapp2.1\lchat.server.dll
+L:\Projects\LChat\lchat.server\lchat.server\bin\Debug\netcoreapp2.1\lchat.server.pdb
+L:\Projects\LChat\lchat.server\lchat.server\obj\Debug\netcoreapp2.1\lchat.server.fsprojAssemblyReference.cache
+L:\Projects\LChat\lchat.server\lchat.server\obj\Debug\netcoreapp2.1\lchat.server.AssemblyInfoInputs.cache
+L:\Projects\LChat\lchat.server\lchat.server\obj\Debug\netcoreapp2.1\lchat.server.AssemblyInfo.fs
+L:\Projects\LChat\lchat.server\lchat.server\obj\Debug\netcoreapp2.1\lchat.server.dll
+L:\Projects\LChat\lchat.server\lchat.server\obj\Debug\netcoreapp2.1\lchat.server.pdb
