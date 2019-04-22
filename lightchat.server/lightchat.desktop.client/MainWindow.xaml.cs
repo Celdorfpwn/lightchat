@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.SignalR.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,28 @@ namespace lightchat.desktop.client
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        HubConnection connection;
         public MainWindow()
         {
             InitializeComponent();
+            connection = new HubConnectionBuilder()
+                .WithUrl("https://localhost:44392/chatserver")
+                .Build();
+
+
+            connection.On<string>("PingBack", message =>
+            {
+                Console.WriteLine(message);
+            });
+
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            await connection.StartAsync();
+
+            await connection.InvokeAsync("Ping");
         }
     }
 }

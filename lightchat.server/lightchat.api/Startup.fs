@@ -32,6 +32,6 @@ type Startup private () =
 
         app.UseHttpsRedirection() |> ignore
         app.UseMvc() |> ignore
-        app.UseSignalR(fun routes -> routes.MapHub<Hubs.ChatHub>(PathString "/chathub"))
+        app.UseSignalR(fun routes -> routes.MapHub<Hubs.ChatHub>(PathString "/chatserver")) |> ignore
 
     member val Configuration : IConfiguration = null with get, set

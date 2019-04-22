@@ -7,7 +7,7 @@ type ChatHub () =
     inherit Hub()
 
     member this.Ping() =
-        async {
-            this.Clients.User(this.Context.ConnectionId).SendAsync("PingBack") |> ignore
-        }
+        this.Clients.Caller.SendAsync("PingBack", "hello from the other side").Wait() |> ignore
+
+        
         
