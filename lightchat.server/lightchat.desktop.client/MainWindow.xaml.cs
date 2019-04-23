@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.SignalR.Client;
+﻿using lightchat.contracts;
+using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace lightchat.desktop.client
     {
 
         HubConnection connection;
+        readonly SimpleMessageFunctionsMap functionsMap = new SimpleMessageFunctionsMap();
         public MainWindow()
         {
             InitializeComponent();
@@ -31,9 +33,9 @@ namespace lightchat.desktop.client
                 .Build();
 
 
-            connection.On<string>("PingBack", message =>
+            connection.On<SimpleMessageContract>(functionsMap.ClientReceiveMessage, contract =>
             {
-                Console.WriteLine(message);
+                Console.WriteLine(contract);
             });
 
         }
@@ -42,7 +44,10 @@ namespace lightchat.desktop.client
         {
             await connection.StartAsync();
 
-            await connection.InvokeAsync("Ping");
+            await connection.InvokeAsync(functionsMap.ServerSendMessage, new SimpleMessageContract
+            {
+                Text = "Wtf"
+            });
         }
     }
 }

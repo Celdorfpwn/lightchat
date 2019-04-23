@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{30E9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lightchat.desktop.client", "lightchat.desktop.client\lightchat.desktop.client.csproj", "{E0A282EF-8A6D-4CF9-BAD5-BC81D73FB0CF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{CF0A008C-A214-42CC-85CC-802CB8EB589F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lightchat.contracts", "lightchat.contracts\lightchat.contracts.csproj", "{FEA97CCD-DC92-4002-B4E8-331E8800C480}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{E0A282EF-8A6D-4CF9-BAD5-BC81D73FB0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0A282EF-8A6D-4CF9-BAD5-BC81D73FB0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0A282EF-8A6D-4CF9-BAD5-BC81D73FB0CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEA97CCD-DC92-4002-B4E8-331E8800C480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEA97CCD-DC92-4002-B4E8-331E8800C480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEA97CCD-DC92-4002-B4E8-331E8800C480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEA97CCD-DC92-4002-B4E8-331E8800C480}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{39001F01-D29E-44BB-B1DB-E502D110C0E6} = {D6D1DC8A-BF17-4D90-9071-A9D71BB305DE}
 		{E0A282EF-8A6D-4CF9-BAD5-BC81D73FB0CF} = {30E9F23D-0927-4D2D-AE8E-AB598AD135F0}
+		{FEA97CCD-DC92-4002-B4E8-331E8800C480} = {CF0A008C-A214-42CC-85CC-802CB8EB589F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF06A13B-8883-4E75-9E54-1F8E4EFCDF88}

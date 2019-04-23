@@ -1,13 +1,16 @@
 ﻿module Hubs
 
 open Microsoft.AspNetCore.SignalR
+open lightchat.contracts
 
 
 type ChatHub () = 
     inherit Hub()
 
-    member this.Ping() =
-        this.Clients.Caller.SendAsync("PingBack", "hello from the other side").Wait() |> ignore
+    let functionsMap = SimpleMessageFunctionsMap()
+
+    member this.SendMessage(contract: SimpleMessageContract) =
+        this.Clients.Caller.SendAsync(functionsMap.ClientReceiveMessage, contract).Wait() |> ignore
 
         
         
