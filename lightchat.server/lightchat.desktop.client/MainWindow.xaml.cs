@@ -1,8 +1,10 @@
 ﻿using lightchat.contracts;
+using lightchat.desktop.client.ChatApi;
 using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,31 +25,17 @@ namespace lightchat.desktop.client
     public partial class MainWindow : Window
     {
 
-        HubConnection connection;
-        readonly SimpleMessageFunctionsMap functionsMap = new SimpleMessageFunctionsMap();
+        ChatClient client = new ChatClient();
+
         public MainWindow()
         {
             InitializeComponent();
-            connection = new HubConnectionBuilder()
-                .WithUrl("https://localhost:44392/chatserver")
-                .Build();
-
-
-            connection.On<SimpleMessageContract>(functionsMap.ClientReceiveMessage, contract =>
-            {
-                Console.WriteLine(contract);
-            });
 
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            await connection.StartAsync();
-
-            await connection.InvokeAsync(functionsMap.ServerSendMessage, new SimpleMessageContract
-            {
-                Text = "Wtf"
-            });
+            client.Initialize.Concat(client.SendMessage(new SimpleMessageContract { Text = "wtf" })).Subscribe();
         }
     }
 }
